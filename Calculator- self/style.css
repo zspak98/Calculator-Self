@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* padding-top: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    background-color: skyblue;
+}
+
+.grid {
+ background-color: whitesmoke;
+ font-family:sans-serif;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ grid-template-rows: repeat(6, 1fr); 
+ /* grid-template-rows: minmax(120px, auto) repeat(5, 100px); */
+ grid-template-areas: 
+ "r r r r"
+ "plus minus time divide"
+ "seven eight nine equal"
+ "four five six equal"
+ "one two three equal"
+ "zero dot clear equal";
+}
+
+.operator-el {
+    background-color: rgb(181, 177, 177);
+}
+
+
+button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    font-size: 25px;
+    cursor: pointer;
+    border: 0.5px solid rgb(141, 137, 137);
+}
+
+.result {
+/* grid-area: r; */
+background-color: black;
+color: white;
+display: flex;
+flex-direction: column;
+justify-content: flex-end;
+padding-right: 15px;
+font-size: 35px;
+padding-top: 5px;
+grid-column: 1/ -1;
+word-wrap: break-word;
+word-break: break-all;
+
+}
+
+.previous-operand {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: white;
+    min-height: 50%;
+}
+
+.current-operand {
+    display: flex;
+    justify-content: flex-end;
+   font-size: 2.5rem;
+   color: white;
+   min-height: 50%;
+   margin-bottom: 4px;
+}
+
+.equal {
+grid-area: equal;
+background-color: rgb(250, 136, 87);
+}
+
+button:hover {
+    filter: brightness(90%);
+}
+
+button:active {
+    filter: brightness(80%);
+}
+
